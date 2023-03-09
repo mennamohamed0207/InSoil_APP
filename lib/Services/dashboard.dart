@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo/Screens/recommended_screen.dart';
 import 'package:todo/functions.dart';
 
 // ignore: camel_case_types
@@ -56,9 +57,12 @@ class _dashboardState extends State<dashboard> {
                   width: 100,
                   child: MaterialButton(
                     color: Colors.green,
-                    onPressed: () {
-                      // To do
-                    },
+                    onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Recommend()),
+                  );
+                },
                     child: const Text(
                       'Finish',
                       style: TextStyle(fontSize: 20),

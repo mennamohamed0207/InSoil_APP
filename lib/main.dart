@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo/Screens/recommended_screen.dart';
 
 import 'Screens/Welcome.dart';
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      
+      debugShowCheckedModeBanner: false,
       title: 'InSoil',
       theme: ThemeData(
         primarySwatch: Colors.green,
