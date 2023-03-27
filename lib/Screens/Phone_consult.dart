@@ -1,18 +1,26 @@
 import 'package:flutter/material.dart';
 
 class Phone extends StatefulWidget {
-  const Phone({Key? key}) : super(key: key);
+  String name;
+
+  Phone(this.name);
 
   @override
-  State<Phone> createState() => _PhoneState();
+  State<Phone> createState() => _PhoneState(name);
 }
 
 class _PhoneState extends State<Phone> {
+   String name;
+
+  _PhoneState(this.name);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      appBar: AppBar(title: const Text("InSoil")),
+      appBar: AppBar(title: Text(
+        'Contact ' + name,
+      )),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -57,8 +65,11 @@ class _PhoneState extends State<Phone> {
                 onPressed: () => showDialog(
                   context: context,
                   builder: (BuildContext context) => AlertDialog(
-                    content: const Text(
-                        'You will receive a phone call within 10 minutes'),
+                    content:Text(
+                       'You will receive a phone call from \'' + name + '\' within 10 minutes' ,
+                    style:
+                    new TextStyle(fontFamily: 'Ubuntu', fontSize: 17.0 , fontWeight: FontWeight.w600,),
+                    ),
                     actions: <Widget>[
                       TextButton(
                         onPressed: () => Navigator.pop(context, 'Okay'),

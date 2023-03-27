@@ -14,19 +14,18 @@ class _fertilizerState extends State<fertilizer> {
   @override
   Widget build(BuildContext context) {
     List<String> Names = [
-      "Sample1",
-      "Sample2",
-      "Sample3",
-      "Sample4",
-      "Sample5",
-      "Sample6",
-      "Sample7",
+      "N-P-K 20 20 20",
+      "Superphosphate",
+      "Monoammonium",
+      "Di-ammounium phosphate",
+      "Ammounium poly-phosphate liquid",
+      "Triple SuperPhosphate",
+     
       
     ];
     List<String> images = [
       "https://m.media-amazon.com/images/I/81+DOyVIA2L._SL1500_.jpg",
       "https://www.foodicine.co.in/img/products/seaweed-fertilizer.jpg",
-      "https://kellogggarden.com/wp-content/uploads/2020/02/Products_GB_Organics_Fertilizers.jpg",
       "https://www.yara.ph/siteassets/philippines/01-yaramila-f-2.jpg",
       "https://evergrowfert.com/wp-content/uploads/2020/01/assets__up__file-1508672699-KCESGP.jpg",
       "https://www.alphaoneinc.com/wp-content/uploads/2022/03/Nat-Organic-Product.png",
@@ -38,28 +37,28 @@ class _fertilizerState extends State<fertilizer> {
       "120 LE",
       "200 LE",
       "300 LE",
-      "350 LE",
+      
       "325 LE"
     ];
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      appBar: AppBar(title: const Text("InSoil")),
+      appBar: AppBar(title: const Text("Fertilizers")),
       body: Padding(
         padding: const EdgeInsets.all(15),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Text(
-                  "Fertilizers ",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      fontStyle: FontStyle.italic),
-                ),
-              ],
-            ),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.center,
+            //   children: const [
+            //     Text(
+            //       "Fertilizers ",
+            //       style: TextStyle(
+            //           fontWeight: FontWeight.bold,
+            //           fontSize: 20,
+            //           fontStyle: FontStyle.italic),
+            //     ),
+            //   ],
+            // ),
             const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
             Expanded(
                 child: ListView.builder(

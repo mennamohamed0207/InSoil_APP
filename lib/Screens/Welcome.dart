@@ -23,16 +23,16 @@ class _WelcomeState extends State<Welcome> {
               width: double.infinity,
               child: FloatingActionButton(
                 onPressed: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(builder: (context) => const Home_Page()),
                   );
                 },
-                /*child: const Text(
+                child: const Text(
                   "InSoil",
                   style: TextStyle(fontSize: 80),
-                ),*/
-                //child: const Image(image: AssetImage("images/InSoil.jpeg")),
+                ),
+                // child: const Image(image: AssetImage("images/InSoil.jpeg")),
               ),
             ),
           ],

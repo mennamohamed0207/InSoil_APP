@@ -19,9 +19,11 @@ class _Home_PageState extends State<Home_Page> {
     var size = MediaQuery.of(context).size;
     var width = size.width;
     var height = size.height;
-    var cardheight = height * 0.35;
+    var cardheight = height * 0.38;
     var cardwidth = width * 0.45;
-    final Uri _url = Uri.parse('https://form.jotform.com/222788095072059');
+    var imageheight = height * 0.3;
+    var imagewidth = width * 0.4;
+    final Uri _url = Uri.parse('https://forms.gle/C7xJBgGD2rYzkBYr9');
     Future<void> _launchUrl() async {
       if (!await launchUrl(_url)) {
         throw 'Could not launch $_url';
@@ -29,24 +31,26 @@ class _Home_PageState extends State<Home_Page> {
     }
 
     return Scaffold(
-      backgroundColor: Colors.grey[200],
-      appBar: AppBar(title: const Text("InSoil")),
+      backgroundColor: Colors.white,
+      appBar: AppBar(leading:IconButton(onPressed: (){}, icon: Icon(Icons.menu)),
+        title: const Text("InSoil"
+      )),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const Padding(padding: EdgeInsets.all(15)),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Text(
-                  "Our Services ",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30,
-                      fontStyle: FontStyle.italic),
-                ),
-              ],
-            ),
+            // const Padding(padding: EdgeInsets.all(15)),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.center,
+            //   children: const [
+            //     Text(
+            //       "Our Services ",
+            //       style: TextStyle(
+            //           fontWeight: FontWeight.bold,
+            //           fontSize: 30,
+            //           fontStyle: FontStyle.italic),
+            //     ),
+            //   ],
+            // ),
             const SizedBox(
               height: 30,
             ),
@@ -57,28 +61,37 @@ class _Home_PageState extends State<Home_Page> {
                     padding: const EdgeInsetsDirectional.only(start: 5),
                     child: MaterialButton(
                       onPressed: _launchUrl,
-                      child: Container(
-                        height: cardheight,
-                        width: cardwidth,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
+                      child: Card(
+                        elevation: 10,
+                        shape: RoundedRectangleBorder(
+                            side: BorderSide(color: Colors.grey),
+                            borderRadius: BorderRadius.circular(30)),
+                        child: Container(
+                          height: cardheight,
+                          width: cardwidth,
                           color: Colors.white,
-                        ),
-                        child: Column(
-                          children: const [
-                            Expanded(
-                                child: Image(
-                                    image: NetworkImage(
-                                        "https://ae01.alicdn.com/kf/H3b62321bf8684e1b942ea3e073ea6db0T/Soil-NPK-detector-display-meter-can-export-history-data-to-U-disk-with-earth-NPK-sensor.jpg_Q90.jpg_.webp"))),
-                            Center(
+                          child: Column(
+                            children: [
+                              Expanded(
+                                  child: Image(
+                                image: NetworkImage(
+                                    "https://static.vecteezy.com/system/resources/previews/005/057/049/non_2x/smart-farming-technology-illustration-concept-flat-illustration-isolated-on-white-background-vector.jpg"),
+                                height: imageheight,
+                                width: imagewidth,
+                              )),
+                              const Center(
+                                  child: Padding(
+                                padding: EdgeInsets.all(8.0),
                                 child: Text(
-                              "Our device ",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                  fontStyle: FontStyle.italic),
-                            )),
-                          ],
+                                  "Order our service ",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                      fontStyle: FontStyle.italic),
+                                ),
+                              )),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -95,28 +108,38 @@ class _Home_PageState extends State<Home_Page> {
                               builder: (context) => const Consult()),
                         );
                       },
-                      child: Container(
-                        height: cardheight,
-                        width: cardwidth,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.white,
-                        ),
-                        child: Column(
-                          children: const [
-                            Expanded(
-                                child: Image(
-                                    image: NetworkImage(
-                                        "https://thumbs.dreamstime.com/b/men-women-consultants-vector-illustration-original-paintings-drawing-72672466.jpg"))),
-                            Center(
+                      child: Card(
+                          elevation: 10,
+                        shape: RoundedRectangleBorder(
+                            side: BorderSide(color: Colors.grey),
+                            borderRadius: BorderRadius.circular(30)),
+                        child: Container(
+                          height: cardheight,
+                          width: cardwidth,
+                        
+                            color: Colors.white,
+                          
+                          child: Column(
+                            children: [
+                              Expanded(
+                                  child: Image(
+                                      image: NetworkImage(
+                                          "https://ibytecode.com/ibcjupiter/wp-content/uploads/2016/09/business-consultancy-in-chennai.png"),
+                                      height: imageheight,
+                                      width: imagewidth)),
+                              Center(
+                                  child: Padding(
+                                padding: const EdgeInsets.all(8.0),
                                 child: Text(
-                              "Consutancy ",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                  fontStyle: FontStyle.italic),
-                            )),
-                          ],
+                                  "Consutancy ",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                      fontStyle: FontStyle.italic),
+                                ),
+                              )),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -140,28 +163,39 @@ class _Home_PageState extends State<Home_Page> {
                               builder: (context) => const fertilizer()),
                         );
                       },
-                      child: Container(
-                        height: cardheight,
-                        width: cardwidth,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.white,
-                        ),
-                        child: Column(
-                          children: const [
-                            Expanded(
-                                child: Image(
-                                    image: NetworkImage(
-                                        "https://media.istockphoto.com/vectors/insecticide-and-fertilizer-icon-vector-id1003133950"))),
-                            Center(
+                      child: Card(
+                          elevation: 10,
+                        shape: RoundedRectangleBorder(
+                            side: BorderSide(color: Colors.grey),
+                            borderRadius: BorderRadius.circular(30)),
+                        child: Container(
+                          height: cardheight,
+                          width: cardwidth,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: Colors.white,
+                          ),
+                          child: Column(
+                            children: [
+                              Expanded(
+                                  child: Image(
+                                      image: NetworkImage(
+                                          "https://media.istockphoto.com/vectors/insecticide-and-fertilizer-icon-vector-id1003133950"),
+                                      height: imageheight,
+                                      width: imagewidth)),
+                              Center(
+                                  child: Padding(
+                                padding: const EdgeInsets.all(8.0),
                                 child: Text(
-                              "Fertilizers ",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                  fontStyle: FontStyle.italic),
-                            )),
-                          ],
+                                  "Fertilizers ",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                      fontStyle: FontStyle.italic),
+                                ),
+                              )),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -178,28 +212,39 @@ class _Home_PageState extends State<Home_Page> {
                               builder: (context) => const dashboard()),
                         );
                       },
-                      child: Container(
-                        height: cardheight,
-                        width: cardwidth,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.white,
-                        ),
-                        child: Column(
-                          children: const [
-                            Expanded(
-                                child: Image(
-                                    image: NetworkImage(
-                                        "https://static.vecteezy.com/system/resources/previews/008/329/474/original/dashboard-icon-style-free-vector.jpg"))),
-                            Center(
+                      child: Card(
+                          elevation: 10,
+                        shape: RoundedRectangleBorder(
+                            side: BorderSide(color: Colors.grey),
+                            borderRadius: BorderRadius.circular(30)),
+                        child: Container(
+                          height: cardheight,
+                          width: cardwidth,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: Colors.white,
+                          ),
+                          child: Column(
+                            children: [
+                              Expanded(
+                                  child: Image(
+                                      image: NetworkImage(
+                                          "https://static.vecteezy.com/system/resources/previews/008/329/474/original/dashboard-icon-style-free-vector.jpg"),
+                                      height: imageheight,
+                                      width: imagewidth)),
+                              Center(
+                                  child: Padding(
+                                padding: const EdgeInsets.all(8.0),
                                 child: Text(
-                              "Dashboard ",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                  fontStyle: FontStyle.italic),
-                            )),
-                          ],
+                                  "Dashboard ",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                      fontStyle: FontStyle.italic),
+                                ),
+                              )),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -228,7 +273,7 @@ class _Home_PageState extends State<Home_Page> {
             height: 200,
             width: 200,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(30),
               color: Colors.grey[300],
             ),
             child: const Padding(

@@ -1,4 +1,4 @@
-import 'dart:html';
+
 
 import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
@@ -6,7 +6,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 List<String> images = [
       
       "https://www.foodicine.co.in/img/products/seaweed-fertilizer.jpg",
-      "https://kellogggarden.com/wp-content/uploads/2020/02/Products_GB_Organics_Fertilizers.jpg",
+     
       "https://www.yara.ph/siteassets/philippines/01-yaramila-f-2.jpg",
       "https://evergrowfert.com/wp-content/uploads/2020/01/assets__up__file-1508672699-KCESGP.jpg",
       "https://www.alphaoneinc.com/wp-content/uploads/2022/03/Nat-Organic-Product.png",
@@ -18,6 +18,7 @@ class Recommend extends StatefulWidget {
 
   @override
   State<Recommend> createState() => _RecommendState();
+
 }
 
 class _RecommendState extends State<Recommend> {
@@ -68,11 +69,11 @@ class _RecommendState extends State<Recommend> {
                 child: Padding(
                   padding: const EdgeInsets.all(15),
                   child: Row(
-                    children: const [
+                    children:  [
                       Text("Amount per acre :",style: TextStyle(fontWeight: FontWeight.w500,fontSize: 25),),
 
                       Padding(
-                        padding: EdgeInsetsDirectional.only(start:50,end: 20),
+                        padding: EdgeInsetsDirectional.only(start: width*0.1,end: width*0.05),
                         child: Text("60 KG",style: TextStyle(fontWeight: FontWeight.w500,fontSize: 25),),
                       ),
                       Text("3 Bags",style: TextStyle(fontWeight: FontWeight.w100,fontSize: 18),)

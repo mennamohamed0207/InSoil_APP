@@ -1,6 +1,19 @@
+import 'dart:core';
 import 'package:flutter/material.dart';
-import 'package:todo/Screens/Phone_consult.dart';
 
+
+import '../components.dart';
+
+class Expert{
+  String name;
+  String title;
+  String image;
+  double rating;
+  String phone;
+
+  Expert(this.name, this.title, this.image, this.rating,this.phone);
+
+}
 class Consult extends StatefulWidget {
   const Consult({Key? key}) : super(key: key);
 
@@ -9,6 +22,29 @@ class Consult extends StatefulWidget {
 }
 
 class _ConsultState extends State<Consult> {
+  List<Expert> experts = [
+    Expert('Mohamed Elsayed', 'Agricultural Engineer', 'https://img.freepik.com/free-photo/portrait-man-white-shirt_171337-11986.jpg'
+        , 3.5, '01095986878'),
+    Expert('Hany Emad ', 'Agricultural Specialist', 'https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/image/rDtN98Qoishumwih/graphicstock-successful-business-man-is-standing-on-isolated-white-background_r0GpgkoZb_thumb.jpg'
+        , 5, '01095986878'),
+    Expert('Mohamed Elsayed', 'Agricultural Engineer', 'https://img.freepik.com/free-photo/portrait-man-white-shirt_171337-11986.jpg'
+        , 3.5, '01095986878'),
+    Expert('Hany Emad ', 'Agricultural Specialist', 'https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/image/rDtN98Qoishumwih/graphicstock-successful-business-man-is-standing-on-isolated-white-background_r0GpgkoZb_thumb.jpg'
+        , 5, '01095986878'),
+    Expert('Mohamed Elsayed', 'Agricultural Engineer', 'https://img.freepik.com/free-photo/portrait-man-white-shirt_171337-11986.jpg'
+        , 3.5, '01095986878'),
+    Expert('Hany Emad ', 'Agricultural Specialist', 'https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/image/rDtN98Qoishumwih/graphicstock-successful-business-man-is-standing-on-isolated-white-background_r0GpgkoZb_thumb.jpg'
+        , 5, '01095986878'),
+    Expert('Mohamed Elsayed', 'Agricultural Engineer', 'https://img.freepik.com/free-photo/portrait-man-white-shirt_171337-11986.jpg'
+        , 3.5, '01095986878'),
+    Expert('Hany Emad ', 'Agricultural Specialist', 'https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/image/rDtN98Qoishumwih/graphicstock-successful-business-man-is-standing-on-isolated-white-background_r0GpgkoZb_thumb.jpg'
+        , 5, '01095986878'),
+    Expert('Mohamed Elsayed', 'Agricultural Engineer', 'https://img.freepik.com/free-photo/portrait-man-white-shirt_171337-11986.jpg'
+        , 3.5, '01095986878'),
+    Expert('Hany Emad', 'Agricultural Specialist', 'https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/image/rDtN98Qoishumwih/graphicstock-successful-business-man-is-standing-on-isolated-white-background_r0GpgkoZb_thumb.jpg'
+        , 5, '01095986878'),
+  ];
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -27,8 +63,8 @@ class _ConsultState extends State<Consult> {
         child: Column(
           children: [
             Icon(
-              size: 150,
               Icons.person,
+              size: 150,
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -46,94 +82,9 @@ class _ConsultState extends State<Consult> {
     }
 
     return Scaffold(
-      backgroundColor: Colors.grey[200],
-      appBar: AppBar(title: const Text("InSoil")),
-      body: SingleChildScrollView(
-          child: Column(
-        children: [
-          const Padding(padding: EdgeInsets.all(15)),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Text(
-                "Our Experts ",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30,
-                    fontStyle: FontStyle.italic),
-              ),
-            ],
-          ),
-          const Padding(padding: EdgeInsets.all(15)),
-          Row(
-            children: [
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsetsDirectional.only(end: 5),
-                  child: MaterialButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Phone()),
-                      );
-                    },
-                    child: Expert("Engineer 1"),
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsetsDirectional.only(end: 5),
-                  child: MaterialButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Phone()),
-                      );
-                    },
-                    child: Expert("Engineer 2"),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          Row(
-            children: [
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsetsDirectional.only(end: 5),
-                  child: MaterialButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Phone()),
-                      );
-                    },
-                    child: Expert("Engineer 3"),
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsetsDirectional.only(end: 5),
-                  child: MaterialButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Phone()),
-                      );
-                    },
-                    child: Expert("Engineer 4"),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ],
-      )),
+      backgroundColor: Colors.white,
+      appBar: AppBar(title: const Text("Consultancy")),
+      body: ExpertBuilder(experts, context),
     );
   }
 }
